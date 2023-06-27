@@ -12,7 +12,7 @@ public class NumerosAleatorios : MonoBehaviour
     public int numeroActual = 0;//Variable publica para poder verificar el numero que salio
     public TMP_Text randomNumber;
     public Button button;
-    [SerializeField] private List<int> invalidNumbers = new List<int>(){0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+    [SerializeField] private List<int> invalidNumbers = new List<int>(){0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
     [SerializeField] private int tamList ;//Variable que indica el limite superior permitido en el random 
     private int numAux = 0;
     
@@ -23,9 +23,9 @@ public class NumerosAleatorios : MonoBehaviour
     }
     void RandomNumber()
     {
-        numAux = Random.Range(0,tamList);
+        numAux = Random.Range(1,tamList);
         randomNumber.text = invalidNumbers[numAux].ToString();
-        numeroActual = invalidNumbers[numAux]; Debug.Log("Numero Actual:"+numeroActual);
+        numeroActual = invalidNumbers[numAux];
         invalidNumbers.RemoveAt(numAux);
         tamList--;
     }
